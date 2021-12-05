@@ -1,0 +1,127 @@
+.section {
+	padding: 150px 0;
+
+	&__title {
+		position: relative;
+		text-align: center;
+		font-family: 'Rochester', cursive;
+		font-size: 50px;
+		color: $white;
+
+		&::before {
+			position: absolute;
+			display: block;
+			top: 60px;
+			left: 50%;
+			right: 50%;
+			width: 150px;
+			height: 150px;
+			background-image: url("../images/fingerpoint.svg");
+			background-position: center;
+			background-size: cover;
+			transform: rotate(180deg) translateX(50%);
+			content: '';
+		}
+	}
+}
+
+.present {
+	padding-top: 150px;
+	margin: 0 auto;
+
+	&__lid,
+	&__box {
+		position: relative;
+		margin: 0 auto;
+		background: radial-gradient($white 15%, transparent 18%), rgb(248, 58, 58);
+		background-position: 0 0, 25px 25px;
+		background-size: 50px 50px;
+	}
+
+	&__lid {
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 410px;
+		height: 70px;
+		padding: 0 2px;
+		box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+		background-color: rgb(216, 52, 52);
+		transition: top ease-out 0.5s, left ease-out 0.5s, transform ease-out 0.5s;
+	}
+
+	&__ribbon {
+		position: absolute;
+		display: block;
+		background-color: rgba(235, 199, 0, 0.8);
+		box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+
+		&--horizontal {
+			width: 100%;
+			height: 60px;
+			top: 80px;
+		}
+
+		&--vertical {
+			width: 60px;
+			height: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__text {
+		position: relative;
+		top: 10px;
+		height: 0;
+		margin: 0;
+		font-size: 30px;
+		font-weight: 700;
+		text-align: center;
+		color: $white;
+		transition: all ease-out 0.7s;
+	}
+
+	&__name {
+		display: block;
+		margin: 0;
+		font-size: 42px;
+	}
+
+	&__box {
+		width: 400px;
+		height: 250px;
+	}
+
+	&:hover .present__lid {
+		top: -100px;
+		left: 10px;
+		transform: rotateZ(10deg);
+	}
+
+	&:hover .present__text {
+		top: -80px;
+	}
+
+	@include respond(max-xs) {
+		& {
+			max-width: 320px;
+		}
+
+		&__lid {
+			width: 100%;
+			height: 60px;
+		}
+
+		&__box {
+			width: calc(100% - 10px);
+			height: 200px;
+		}
+
+		&__ribbon {
+			&--horizontal {
+				top: 40px;
+			}
+		}
+	}
+}

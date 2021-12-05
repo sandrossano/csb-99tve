@@ -1,0 +1,18 @@
+// Abstracts (Vars, mixins, functions)
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// Vendors
+@import "vendor/libs";
+
+// Base
+@import "base/base";
+@import "base/fonts";
+@import "base/helpers";
+
+// Components
+
+// Layout-related sections
+
+// Page-specific styles
+@import "pages/index-page";

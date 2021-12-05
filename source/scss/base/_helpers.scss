@@ -1,0 +1,23 @@
+.container {
+	max-width: $max-width + px;
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 100%;
+
+	@include respond(max-lg) {
+		max-width: 970px;
+	}
+
+	@include respond(max-md) {
+		max-width: 750px;
+	}
+
+	@include respond(max-sm) {
+		max-width: 570px;
+	}
+
+	@include respond(max-xs) {
+		max-width: none;
+		min-width: $min-width;
+	}
+}
