@@ -15,23 +15,56 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/main.css" />
-    <script>
-      alert("Attiva l'audio!");
-      /*window.onload = function () {
-        document.getElementById("my_audio").play();
-      };*/
-    </script>
   </head>
 
   <body>
-    <audio autoplay id="my_audio" src="images/poke.mp3" loop="loop"></audio>
     <main class="main">
+      <div class="popupInitial" align="center" id="popIni">
+        <p
+          style="
+            font-family: 'Euphoria Script', cursive;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+          "
+        >
+          Alza il volume e chiudi il popup
+        </p>
+        <br />
+        <br />
+        <audio id="myAudio" src="images/poke.mp3" preload="auto"></audio>
+        <button
+          style="border: 0; background: transparent; float: right;"
+          onclick="playSound();"
+          id="buttonPlay"
+        >
+          <img src="./images/Ball_icon.png" width="70" height="70" alt="poke" />
+          <br />
+          <span style="color: red;">Chiudi Popup</span>
+        </button>
+
+        <script>
+          function playSound(id = "myAudio") {
+            console.log("play");
+            const media = document.getElementById(id);
+            if (!media.paused) {
+              media.pause();
+            } else {
+              media.play();
+            }
+            const popIni = document.getElementById("popIni");
+            popIni.style = "display:none;";
+          }
+        </script>
+      </div>
+
       <img
         src="./images/pika.jpg"
         alt="Pika"
         class="pika"
         style="max-width: 500px;"
       />
+
       <img
         style="float: right; margin-right: 50px;"
         src="images/mew.png"

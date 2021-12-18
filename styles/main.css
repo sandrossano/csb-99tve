@@ -637,6 +637,51 @@ body {
   -o-transition: transform 0.6s ease-out;
   transition: transform 0.6s ease-out;
 }
+
+.popupInitial {
+  top: 30%;
+  right: 0;
+  left: 50%;
+  font-size: 14px;
+  font-family: "Tahoma", Arial, sans-serif;
+  z-index: 10000;
+  margin: auto;
+  width: 90%;
+  opacity: 95%;
+  min-width: 320px;
+  max-width: 820px;
+  /* Posizionamento fisso, finestra rimane icolata allo scorimento della pagina */
+  position: fixed;
+  padding: 15px;
+  border: 1px solid #383838;
+  /* arrotondamento dei angoli */
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
+  background-color: #f4e1e5;
+  /* ombra esetrna */
+  -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22),
+    0 19px 60px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22),
+    0 19px 60px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22),
+    0 19px 60px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22), 0 19px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22), 0 19px 60px rgba(0, 0, 0, 0.3);
+  /* trasformazioni */
+  -webkit-transform: translate(-50%, -0%);
+  -ms-transform: translate(-50%, -0%);
+  -o-transform: translate(-50%, -0%);
+  transform: translate(-50%, -0%);
+  /* trasformazioni animate */
+  -webkit-transition: transform 0.6s ease-out;
+  -moz-transition: transform 0.6s ease-out;
+  -ms-transition: transform 0.6s ease-out;
+  -o-transition: transform 0.6s ease-out;
+  transition: transform 0.6s ease-out;
+}
+
 /* attivimo la finestra popup */
 .overlay:target + .popup {
   top: 50%;
@@ -1147,4 +1192,39 @@ span {
     transform: scale(0.1);
     opacity: 0.2;
   }
+}
+
+.modal-container.open {
+  display: flex;
+  z-index: 1;
+}
+
+.modal-container {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.content {
+  padding: 1rem;
+  border-radius: 5px;
+  width: 300px;
+  min-height: 200px;
+  background: rebeccapurple;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
 }
