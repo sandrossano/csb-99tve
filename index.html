@@ -15,9 +15,16 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/main.css" />
+    <script>
+      alert("Attiva l'audio!");
+      window.onload = function () {
+        document.getElementById("my_audio").play();
+      };
+    </script>
   </head>
 
   <body>
+    <audio id="my_audio" src="images/poke.mp3" loop="loop"></audio>
     <main class="main">
       <img
         src="./images/pika.jpg"
